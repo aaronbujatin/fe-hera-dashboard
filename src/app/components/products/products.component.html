@@ -1,0 +1,390 @@
+<div class="ml-16">
+    <ng-http-loader [backdrop]="false" [backgroundColor]="'#000000'" [debounceDelay]="100" [extraDuration]="300"
+        [minDuration]="300" [backdropBackgroundColor]="'#777777'" [spinner]="spinkit.skSpinnerPulse">
+    </ng-http-loader>
+    <section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5 font-['Gabarito']">
+        <div class="mx-auto max-w-screen-xl px-4 ">
+            <!-- Start coding here -->
+            <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
+                <div
+                    class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
+                    <h1 class="text-3xl font-semibold tracking-wider">Products</h1>
+                    <div
+                        class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
+                        <button type="button" data-modal-target="crud-modal" data-modal-toggle="crud-modal"
+                            class="flex items-center justify-center text-white bg-[#1D1D1F] hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
+                            <svg class="-ml-1 mr-1.5 w-5 h-5 text-white " aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M5 12h14m-7 7V5" />
+                            </svg>
+
+                            Add product
+                        </button>
+                        <div class="flex items-center space-x-3 w-full md:w-auto">
+
+                            <button id="filterDropdownButton" data-dropdown-toggle="filterDropdown"
+                                class="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+                                type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                    class="h-4 w-4 mr-2 text-gray-400" viewbox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                Filter
+                                <svg class="-mr-1 ml-1.5 w-5 h-5" fill="currentColor" viewbox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path clip-rule="evenodd" fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                                </svg>
+                            </button>
+                            <div id="filterDropdown"
+                                class="z-10 hidden w-48 p-3 bg-white rounded-lg shadow dark:bg-gray-700">
+                                <h6 class="mb-3 text-sm font-medium text-gray-900 dark:text-white">Choose brand</h6>
+                                <ul class="space-y-2 text-sm" aria-labelledby="filterDropdownButton">
+                                    <li class="flex items-center">
+                                        <input id="apple" type="checkbox" value=""
+                                            class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                        <label for="apple"
+                                            class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Apple
+                                            (56)</label>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <input id="fitbit" type="checkbox" value=""
+                                            class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                        <label for="fitbit"
+                                            class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Microsoft
+                                            (16)</label>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <input id="razor" type="checkbox" value=""
+                                            class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                        <label for="razor"
+                                            class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Razor
+                                            (49)</label>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <input id="nikon" type="checkbox" value=""
+                                            class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                        <label for="nikon"
+                                            class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Nikon
+                                            (12)</label>
+                                    </li>
+                                    <li class="flex items-center">
+                                        <input id="benq" type="checkbox" value=""
+                                            class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                        <label for="benq"
+                                            class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">BenQ
+                                            (74)</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400  table-fixed">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            <tr>
+                                <th scope="col" class="px-4 py-3 w-1/3">Product name</th>
+                                <th scope="col" class="px-4 py-3">Price</th>
+                                <th scope="col" class="px-4 py-3">Brand</th>
+                                <th scope="col" class="px-4 py-3">Stock</th>
+                                <th scope="col" class="px-4 py-3">Category</th>
+                                <th scope="col" class="px-4 py-3">
+                                    Actions
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b dark:border-gray-700 " *ngFor="let product of products">
+                                <td scope="row"
+                                    class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    <div class="flex items-center space-x-5">
+                                        <img src="{{product.imageUrl[0]}}" class="h-16 w-16" alt="">
+                                        <h1 class="truncate">{{product.name}}</h1>
+                                    </div>
+                                </td>
+                                <td class="px-4 py-3">{{product.price | currency: 'Php '}}</td>
+                                <td class="px-4 py-3">{{product.brand}}</td>
+                                <td class="px-4 py-3">{{product.stock}}</td>
+                                <td class="px-4 py-3">{{product.category}}</td>
+                                <td class="px-4 py-3 flex items-center justify-start">
+                                    <div class="pt-4 flex justify-between items-center text-center">
+                                        <button class="" data-modal-target="view-modal" data-modal-toggle="view-modal"
+                                            (click)="viewProduct(product.id)">
+                                            <svg class="w-6 h-6 text-gray-500 hover:text-gray-800 dark:text-white space-x-2"
+                                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                viewBox="0 0 24 24">
+                                                <path stroke="currentColor" stroke-width="2"
+                                                    d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z" />
+                                                <path stroke="currentColor" stroke-width="2"
+                                                    d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                            </svg>
+                                        </button>
+
+                                        <div class="pl-2">
+                                            <svg class="w-6 h-6 text-gray-500 hover:text-gray-800" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                <path stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2"
+                                                    d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z" />
+                                            </svg>
+                                        </div>
+
+                                        <div class="pl-2">
+                                            <svg class="w-6 h-6 text-gray-500 hover:text-gray-800 space-x-2"
+                                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                viewBox="0 0 24 24">
+                                                <path stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2"
+                                                    d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+
+
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <nav class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-3 md:space-y-0 p-4"
+                    aria-label="Table navigation">
+                    <span class="text-sm font-normal text-gray-500 dark:text-gray-400">
+                        Showing
+                        <span class="font-semibold text-gray-900 dark:text-white">{{this.startItemIndex}} -
+                            {{this.endItemIndex}}</span>
+                        of
+                        <span class="font-semibold text-gray-900 dark:text-white">{{totalProductElements}}</span>
+                    </span>
+                    <ul class="inline-flex items-stretch -space-x-px">
+                        <li>
+                            <button (click)="onPreviousClick()"
+                                class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                                <span class="sr-only">Previous</span>
+                                <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                        </li>
+                        <ng-container *ngFor="let pageNumber of [].constructor(totalPageNumber); let i = index">
+                            <li>
+                                <button
+                                    class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">{{
+                                    i + 1 }}</button>
+                            </li>
+
+                        </ng-container>
+
+
+                        <li>
+                            <button (click)="onNextClick()" [disabled]="currentPage === totalPageNumber"
+                                class="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                                <span class="sr-only">Next</span>
+                                <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Main modal -->
+        <div id="crud-modal" tabindex="-1" aria-hidden="true"
+            class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+            <div class="relative p-4 w-full max-w-md max-h-full">
+                <!-- Modal content -->
+                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                            Create New Product
+                        </h3>
+                        <button type="button"
+                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                            data-modal-toggle="crud-modal">
+                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 14 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <form class="p-4 md:p-5" [formGroup]="productForm" (ngSubmit)="saveProduct()">
+                        <div class="grid gap-4 mb-4 grid-cols-2">
+                            <div class="col-span-2">
+                                <label for="name"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+                                <input type="text" name="name" id="name" formControlName="name"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                    placeholder="Type product name" required="">
+                                <div class="text-xs text-red-600"
+                                    *ngIf="(submitted || productForm.get('name').touched) && productForm.get('name').hasError('required')">
+                                    Product name is required.
+                                </div>
+                            </div>
+                            <div class="col-span-2">
+                                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Image
+                                    url</label>
+                                <input type="text" formControlName="imageUrl"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                    placeholder="Enter image url" required="">
+                                <div class="text-xs text-red-600"
+                                    *ngIf="(submitted || productForm.get('imageUrl').touched) && productForm.get('imageUrl').hasError('required')">
+                                    Product image url is required.
+                                </div>
+                            </div>
+                            <div class="col-span-2 sm:col-span-1">
+                                <label
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Brand</label>
+                                <input type="text" formControlName="brand"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                    placeholder="Type brand" required="">
+                                <div class="text-xs text-red-600"
+                                    *ngIf="(submitted || productForm.get('brand').touched) && productForm.get('brand').hasError('required')">
+                                    Product brand is required.
+                                </div>
+                            </div>
+                            <div class="col-span-2 sm:col-span-1">
+                                <label
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Stock</label>
+                                <input type="number" formControlName="stock"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                    placeholder="Type stock" required="">
+                                <div class="text-xs text-red-600"
+                                    *ngIf="(submitted || productForm.get('stock').touched) && productForm.get('stock').hasError('required')">
+                                    Product stock is required.
+                                </div>
+                            </div>
+                            <div class="col-span-2 sm:col-span-1">
+                                <label
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price</label>
+                                <input type="number" formControlName="price"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                    placeholder="Type price" required="">
+                                <div class="text-xs text-red-600"
+                                    *ngIf="(submitted || productForm.get('price').touched) && productForm.get('price').hasError('required')">
+                                    Product price is required.
+                                </div>
+                            </div>
+                            <div class="col-span-2 sm:col-span-1">
+                                <label for="category"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category</label>
+                                <select id="category" formControlName="category"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                                    <option value="" [disabled]="true" selected="">Select category</option>
+                                    <option value="Processor">Processor</option>
+                                    <option value="Graphicscard">Graphicscard</option>
+                                    <option value="Ram">Ram</option>
+                                    <option value="Motherboard">Motherboard</option>
+                                    <option value="Case">Case</option>
+                                    <option value="Powersupply">Power supply</option>
+                                    <option value="SSD">Solid state drive</option>
+                                </select>
+                                <div class="text-xs text-red-600"
+                                    *ngIf="(submitted || productForm.get('category').touched) && productForm.get('category').hasError('required')">
+                                    Product category is required.
+                                </div>
+                            </div>
+                            <div class="col-span-2">
+                                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product
+                                    Description</label>
+                                <textarea id="descriptions" rows="4" formControlName="descriptions"
+                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="Write product description here. If multiple, separate by comma. "></textarea>
+                                <div class="text-xs text-red-600"
+                                    *ngIf="(submitted || productForm.get('descriptions').touched) && productForm.get('descriptions').hasError('required')">
+                                    Product descriptions is required.
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit"
+                            class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            Add new product
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- View modal -->
+        <div id="view-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
+            class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+            <div class="relative p-4 w-full max-w-2xl max-h-full">
+                <!-- Modal content -->
+                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                            Product details
+                        </h3>
+                        <button type="button"
+                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                            data-modal-hide="view-modal">
+                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 14 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="p-4 md:p-5 space-y-4 flex">
+                        <div class="p-2">
+                            <img src="{{product?.imageUrl[0]}}" class="h-28 w-36" alt="">
+                        </div>
+                        <div class="p-2">
+                            <h1 class="text-xl">{{product?.name}}
+                            </h1>
+                            <h3 class="text-blue-700 text-lg">{{product?.price | currency: 'Php' }}</h3>
+                            <div>
+                                <h1>Descriptions</h1>
+                                <ul class="list-disc list-inside" *ngFor="let description of product?.descriptions">
+                                    <li>
+                                        {{description}}
+                                    </li>
+
+                                </ul>
+                                <div class="flex justify-between">
+                                    <h1>Brand : {{product?.brand}}</h1>
+                                    <h1>Stock : {{product?.stock}}</h1>
+                                    <h1>Category : {{product?.category}}</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+    </section>
+
+</div>

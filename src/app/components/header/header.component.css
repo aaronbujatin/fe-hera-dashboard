@@ -1,0 +1,4 @@
+.content-with-sidebar {
+    margin-left: 240px; /* Adjust the margin-left according to your sidebar width */
+    transition: margin-left 0.3s ease; /* Add transition for smooth animation */
+  }
